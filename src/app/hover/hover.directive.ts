@@ -1,6 +1,7 @@
 import {
   Directive,
   ElementRef,
+  HostBinding,
   HostListener,
   Renderer2
 } from '@angular/core';
@@ -10,6 +11,8 @@ import {
 })
 export class HoverDirective {
 
+  @HostBinding('style.opacity') opacity: string;
+
   constructor(
     private elRef: ElementRef,
     private renderer: Renderer2
@@ -17,11 +20,13 @@ export class HoverDirective {
 
   @HostListener('mouseenter')
   addStyles(): void {
-    this.renderer.setStyle(this.elRef.nativeElement, 'opacity', '0.5');
+    this.opacity = '0.5';
+    // this.renderer.setStyle(this.elRef.nativeElement, 'opacity', '0.5');
   }
 
   @HostListener('mouseleave')
   removeStyles(): void {
-    this.renderer.setStyle(this.elRef.nativeElement, 'opacity', '1');
+    this.opacity = '1';
+    // this.renderer.setStyle(this.elRef.nativeElement, 'opacity', '1');
   }
 }
