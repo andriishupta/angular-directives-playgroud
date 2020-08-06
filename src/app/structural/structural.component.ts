@@ -40,4 +40,8 @@ export class StructuralComponent implements OnInit {
     this.appService.$permission.next(checked ? 'admin' : 'user');
   }
 
+  addIcon(): void {
+    alert('Add icon!');
+  }
+
 }

@@ -77,12 +77,12 @@
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image2"></div>
-    <mat-card-title>Shiba Inu #2</mat-card-title>
+    <mat-card-title>Shiba Inu #3</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content *ngUtilsStateful="resultState$ | async">
     <p>
-      Some other long long long long long long long long long long long long long long long description
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
     </p>
   </mat-card-content>
   <mat-card-actions>
@@ -92,9 +92,9 @@
 </mat-card>
 
 <ng-template #loader>
-  Template ref loader is used
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </ng-template>
 
 <ng-template #error>
-  Failed
+  <mat-icon (click)="addIcon()">person</mat-icon>
 </ng-template>

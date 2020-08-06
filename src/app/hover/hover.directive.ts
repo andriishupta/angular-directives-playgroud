@@ -13,6 +13,8 @@ export class HoverDirective {
 
   @HostBinding('style.opacity') opacity: string;
 
+  @HostBinding('attr.data-test') role = 'role';
+
   constructor(
     private elRef: ElementRef,
     private renderer: Renderer2

@@ -18,6 +18,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { HoverDirective } from './hover/hover.directive';
 import { HasPermissionDirective } from './hasPermission/has-permission.directive';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatCardModule,
     MatChipsModule,
     MatSlideToggleModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
