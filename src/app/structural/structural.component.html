@@ -1,0 +1,100 @@
+<h1>Has Permissions</h1>
+<mat-slide-toggle (change)="changePermission($event)"></mat-slide-toggle>
+
+<mat-card class="example-card" *appHasPermission="'admin'">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image2"></div>
+    <mat-card-title>Shiba Inu #2</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      For Admin
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="example-card" *appHasPermission="['admin', 'user']">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image2"></div>
+    <mat-card-title>Shiba Inu #2</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Admins + Users
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+
+
+<h1>Stateful</h1>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image1"></div>
+    <mat-card-title>Shiba Inu #1</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content *ngUtilsStateful="loadingState; loaderTpl loader">
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+      bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image2" *ngUtilsStateful="errorState; errorTpl error"></div>
+    <mat-card-title>Shiba Inu #2</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content *ngUtilsStateful="errorState">
+    <p>
+      Some other description
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image2"></div>
+    <mat-card-title>Shiba Inu #2</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content *ngUtilsStateful="resultState$ | async">
+    <p>
+      Some other long long long long long long long long long long long long long long long description
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+<ng-template #loader>
+  Template ref loader is used
+</ng-template>
+
+<ng-template #error>
+  Failed
+</ng-template>
